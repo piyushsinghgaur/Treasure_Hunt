@@ -7,6 +7,9 @@ Welcome to the Treasure Hunt game!
 
 This game is a classic Minesweeper-style game where you need to uncover all the cells on the board without hitting any mines.
 
+![image](https://github.com/piyushsinghgaur/Treasure_Hunt/assets/96806312/60134423-55e9-4e10-808b-5bfba87fd53a)
+
+
 ## How to Play
 
 1. Click on any cell to reveal its content.
