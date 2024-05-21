@@ -1,6 +1,6 @@
 Got it! Here's the updated README file with your name:
 
-```markdown
+markdown
 # Treasure Hunt Game
 
 Welcome to the Treasure Hunt game!
@@ -30,9 +30,9 @@ This game is a classic Minesweeper-style game where you need to uncover all the 
 ## How to Run
 
 1. Clone this repository to your local machine:
-   ```
+   
    git clone https://github.com/piyushsinghgaur/Treasure_Hunt.git
-   ```
+   
 2. Open the `index.html` file in your web browser.
 3. Enjoy playing the game!
 
