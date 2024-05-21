@@ -39,8 +39,3 @@ This game is a classic Minesweeper-style game where you need to uncover all the 
 ## Author
 
 This game is created by Piyush Singh Gaur.
-
-Feel free to customize and modify the game as you like!
-```
-
-After saving this content in your `README.md` file, you can commit and push it to your GitHub repository. Let me know if you need further assistance!
