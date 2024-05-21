@@ -3,11 +3,13 @@ const numMines = 10;
 let board = [];
 let revealed = [];
 let mines = new Set();
+let totalPoints = 0;
 
 function initBoard() {
     board = Array.from({ length: size }, () => Array(size).fill(' '));
     revealed = Array.from({ length: size }, () => Array(size).fill(false));
     mines = new Set();
+    totalPoints = 0;
     placeMines();
     calculateAdjacentNumbers();
 }
@@ -41,6 +43,9 @@ function calculateAdjacentNumbers() {
 function revealCell(row, col) {
     if (revealed[row][col]) return;
     revealed[row][col] = true;
+    if (board[row][col] !== ' ' && board[row][col] !== 'M') {
+        totalPoints += parseInt(board[row][col]);
+    }
     updateBoard();
 }
 
@@ -55,15 +60,19 @@ function updateBoard() {
                 cell.classList.add('revealed');
                 cell.textContent = board[row][col];
             }
+            if (board[row][col] === 'M') {
+                cell.classList.add('mine');
+            }
             cell.addEventListener('click', () => handleClick(row, col));
             gameBoard.appendChild(cell);
         }
     }
+    document.getElementById('win-count').textContent = `Total Points: ${totalPoints}`;
 }
 
 function handleClick(row, col) {
     if (board[row][col] === 'M') {
-        document.getElementById('status').textContent = 'Game Over! You hit a mine.';
+        document.getElementById('status').textContent = `Game Over! You hit a mine and won $${totalPoints * 10}.`;
         revealAllMines();
     } else {
         revealCell(row, col);
@@ -101,3 +110,5 @@ function startGame() {
 }
 
 document.addEventListener('DOMContentLoaded', startGame);
+
+document.getElementById('reset-button').addEventListener('click', startGame);

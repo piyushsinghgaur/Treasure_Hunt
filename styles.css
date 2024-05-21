@@ -23,20 +23,44 @@ h1 {
 .cell {
     width: 30px;
     height: 30px;
-    background-color: #ccc;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 18px;
     cursor: pointer;
+    background-color: #ccc; /* Default background color for cells (grey) */
+    color: transparent; /* Hide cell content by default */
 }
 
 .cell.revealed {
-    background-color: #eee;
     cursor: default;
+    color: #333; /* Show cell content when revealed */
 }
 
-#status {
+.cell.revealed.mine {
+    background-color: #ff4d4d; /* Red background for revealed mine cells */
+}
+
+.cell.revealed:not(.mine):empty {
+    background-color: #adffad; /* Light green background for revealed blank cells */
+}
+
+.cell.revealed:not(.mine):not(:empty) {
+    background-color: #6aff6a; /* Green background for revealed cells with numbers */
+}
+
+.cell:hover {
+    background-color: #adffad; /* Light green hover effect */
+}
+
+#status, #win-count {
     margin-top: 20px;
     font-size: 18px;
+}
+
+#reset-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
