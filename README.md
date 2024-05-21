@@ -1,6 +1,3 @@
-Got it! Here's the updated README file with your name:
-
-markdown
 # Treasure Hunt Game
 
 Welcome to the Treasure Hunt game!
